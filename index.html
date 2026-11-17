@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>EGY SPICY | بوابة الانضمام الرسمية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--red:#f12b35;--red2:#ff5961;--bg:#08090b;--panel:#121418;--muted:#a9abb2;--line:#282b32}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:'Cairo',Arial,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#09090bea;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;font-size:22px;letter-spacing:1px}.brand b{color:var(--red)}
+.navlinks{display:flex;gap:24px;color:#d3d3d7;font-size:14px}.navlinks a:hover{color:var(--red2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:12px;background:var(--red);color:white;font-weight:800;border:1px solid var(--red);transition:.2s;cursor:pointer}.btn:hover{transform:translateY(-2px);background:#d91d28}.btn.outline{background:transparent;border-color:#ffffff35}.btn.outline:hover{border-color:var(--red);color:var(--red2)}
+.hero{position:relative;overflow:hidden;min-height:610px;display:flex;align-items:center;background:radial-gradient(ellipse at 78% 45%,#8d111b55,transparent 36%),linear-gradient(115deg,#08090b 35%,#17090d 100%);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;width:430px;height:430px;border:1px solid #ff35452a;border-radius:50%;left:-130px;top:80px;box-shadow:0 0 0 45px #ff354509,0 0 0 90px #ff354506}
+.hero-inner{position:relative;padding:85px 0;max-width:720px}.eyebrow{display:inline-block;border:1px solid #f12b3555;color:#ff7a82;border-radius:30px;padding:5px 14px;font-size:13px;font-weight:800;background:#f12b3510}
+h1{font-size:clamp(46px,8vw,88px);line-height:1.12;margin:20px 0 12px;font-weight:900;letter-spacing:-2px}h1 span{color:var(--red);text-shadow:0 0 35px #f12b3540}
+.hero p{color:#c4c5ca;font-size:18px;max-width:590px;margin:18px 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:30px;margin-top:44px;flex-wrap:wrap}.stat strong{display:block;font-size:20px;color:#fff}.stat small{color:var(--muted)}
+section{padding:82px 0}.section-head{text-align:center;margin-bottom:38px}.section-head .eyebrow{margin-bottom:12px}.section-head h2{font-size:clamp(28px,4vw,42px);margin:4px 0;font-weight:900}.section-head p{color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.panel{background:linear-gradient(145deg,#17191e,#101115);border:1px solid var(--line);border-radius:20px;padding:28px}.panel h3{margin:0 0 10px;font-size:23px}.panel p{color:var(--muted);margin:0}.pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{background:#ffffff09;border:1px solid #ffffff18;padding:7px 13px;border-radius:30px;font-size:13px;color:#e8e8eb}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.feature{padding:20px;background:#ffffff06;border:1px solid #ffffff12;border-radius:16px}.feature .ico{font-size:25px}.feature strong{display:block;margin:5px 0}.feature small{color:var(--muted)}
+.community{background:linear-gradient(180deg,#0b0c0f,#101115)}.links-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.link-card{display:flex;align-items:center;gap:17px;background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:18px;transition:.2s}.link-card:hover{border-color:#f12b3580;transform:translateY(-3px)}.link-icon{width:52px;height:52px;flex:0 0 52px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:#f12b3519}.link-card p{margin:2px 0 0;color:var(--muted);font-size:13px}.arrow{margin-right:auto;color:var(--red);font-size:22px}
+.join-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:stretch}.join-info{background:radial-gradient(circle at 80% 10%,#f12b3530,transparent 40%),#14161a;border:1px solid var(--line);border-radius:20px;padding:28px}.join-info h3{font-size:26px;margin:0 0 10px}.join-info p{color:var(--muted)}.join-info li{margin:8px 0;color:#ddd}
+form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px}.field{margin-bottom:17px}label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}input,select,textarea{width:100%;background:#090a0d;color:white;border:1px solid #30333b;border-radius:11px;padding:13px 14px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--red)}.hint{font-size:12px;color:var(--muted);margin-top:6px}.form-note{font-size:12px;color:var(--muted);margin:12px 0 0}
+.leaders{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:760px;margin:auto}.leader{position:relative;overflow:hidden;text-align:center;background:linear-gradient(145deg,#1b1d22,#101115);border:1px solid var(--line);border-radius:20px;padding:30px 20px}.leader:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:#f12b351a;filter:blur(35px);top:-80px;right:calc(50% - 75px)}.avatar{position:relative;margin:0 auto 14px;width:76px;height:76px;border-radius:23px;display:grid;place-items:center;background:linear-gradient(135deg,#f12b35,#651019);font-size:27px;font-weight:900;box-shadow:0 10px 30px #f12b3533}.leader h3{margin:4px 0;font-size:23px}.role{display:inline-block;border:1px solid #f12b3555;background:#f12b3512;color:#ff838a;border-radius:30px;padding:4px 12px;font-size:12px;font-weight:800}.leader p{color:var(--muted);font-size:14px;margin:10px 0 0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}footer b{color:#fff}
+.toast{index.htmlسdisplay:none;margin-top:14px;padding:12px;border-radius:10px;background:#16331f;color:#b9f3c8;font-size:13px}
+@media(max-width:760px){.navlinks{display:none}.hero{min-height:560px}.hero-inner{padding:70px 0}.about-grid,.join-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr}.links-grid{grid-template-columns:1fr}.leaders{grid-template-columns:1fr}.stats{gap:20px}section{padding:62px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home">EGY <b>SPICY</b> 🌶️</a>
+<div class="navlinks"><a href="#about">عن الكلان</a><a href="#community">المجتمع</a><a href="#join">التقديم</a><a href="#leaders">الليدرات</a></div>
+<a class="btn" href="#join">انضم إلينا</a>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap"><div class="hero-inner">
+<span class="eyebrow">باب الانضمام مفتوح عبر الاختبارات</span>
+<h1>اصنع قوتك مع<br><span>EGY SPICY</span></h1>
+<p>مش مجرد كلان… ده فريق بيجمع المنافسة والمهارة وروح التعاون. مكانك وسط لاعبين بيحبوا التحدي والبطولات.</p>
+<div class="actions"><a class="btn" href="#join">قدّم للكلان الآن</a><a class="btn outline" href="#community">تواصل مع المجتمع</a></div>
+<div class="stats"><div class="stat"><strong>TEAMWORK</strong><small>روح الفريق</small></div><div class="stat"><strong>ESPORTS</strong><small>منافسة وبطولات</small></div><div class="stat"><strong>SPICY</strong><small>قوة وشخصية</small></div></div>
+</div></div></section>
+
+<section id="about"><div class="wrap">
+<div class="section-head"><span class="eyebrow">WHO WE ARE</span><h2>أهلاً بيك في EGY SPICY</h2><p>القوة مش في لاعب واحد… القوة في الفريق كله.</p></div>
+<div class="about-grid">
+<div class="panel"><h3>أكتر من مجرد كلان</h3><p>EGY SPICY مجتمع للاعبين اللي بيحبوا اللعب الجماعي والتطور والمنافسة. بنهتم بروح الفريق والالتزام واللعب النظيف، وبنسعى نكبر سوا خطوة بخطوة.</p><div class="pill-list"><span class="pill">🔥 روح الفريق</span><span class="pill">🏆 طموح البطولات</span><span class="pill">🎮 تطوير المستوى</span><span class="pill">🤝 احترام متبادل</span></div></div>
+<div class="panel"><h3>SPICY MINDSET</h3><p>الاسم له معنى: حماس، تركيز، تعاون، وإصرار على التطور. لو عندك روح الفريق، ابدأ اختبارك.</p></div>
+</div>
+<div class="features"><div class="feature"><span class="ico">🏆</span><strong>لاعبو بطولات</strong><small>خبرة وطموح للمنافسة.</small></div><div class="feature"><span class="ico">⚡</span><strong>تحديات ورومات</strong><small>مساحة للعب والتطور مع الفريق.</small></div><div class="feature"><span class="ico">🤝</span><strong>مجتمع واحد</strong><small>تواصل وتنظيم وروح جماعية.</small></div></div>
+</div></section>
+
+<section class="community" id="community"><div class="wrap">
+<div class="section-head"><span class="eyebrow">JOIN THE COMMUNITY</span><h2>مجتمع EGY SPICY</h2><p>اختار المكان المناسب ليك وكن جزء من الفريق.</p></div>
+<div class="links-grid">
+<a class="link-card" href="https://discord.gg/SqeByNPuc" target="_blank" rel="noopener"><div class="link-icon">🎧</div><div><strong>ديسكورد الكلان</strong><p>الرومات الصوتية والتواصل وتنظيم اللعب.</p></div><span class="arrow">←</span></a>
+<a class="link-card" href="https://chat.whatsapp.com/E6zTmDd1moMKyeBPstEeAC?s=cl&p=a&iam=2" target="_blank" rel="noopener"><div class="link-icon">📲</div><div><strong>اختبار دخول الكلان</strong><p>ادخل مجموعة واتساب الخاصة باختبارات الانضمام.</p></div><span class="arrow">←</span></a>
+</div>
+</div></section>
+
+<section id="join"><div class="wrap">
+<div class="section-head"><span class="eyebrow">BECOME SPICY</span><h2>طلب الانضمام للكلان</h2><p>اكتب بيانات اللعب الأساسية وجهّز رسالة التقديم.</p></div>
+<div class="join-grid">
+<div class="join-info"><h3>جاهز تدخل التحدي؟</h3><p>املأ النموذج، وبعدها هتقدر تنسخ رسالة تقديم جاهزة وتدخل مجموعة الاختبار على واتساب.</p><ul><li>اكتب اسمك داخل اللعبة بشكل صحيح.</li><li>اختار أسلوب لعبك.</li><li>التزم باحترام أعضاء الفريق وقواعده.</li></ul><a class="btn outline" href="https://discord.gg/SqeByNPuc" target="_blank" rel="noopener">دخول الديسكورد</a></div>
+<form id="applyForm">
+<div class="field"><label for="player">اسمك داخل اللعبة *</label><input id="player" name="player" required maxlength="30" placeholder="مثال: SPICY・ALI"></div>
+<div class="field"><label for="style">أسلوب لعبك</label><select id="style" name="style"><option>متنوع</option><option>رانكد / سكواد</option><option>رومات</option><option>بطولات</option></select></div>
+<div class="field"><label for="experience">عرّفنا بنفسك كلاعب (اختياري)</label><textarea id="experience" name="experience" rows="3" maxlength="240" placeholder="خبرتك أو أي معلومة تحب تضيفها..."></textarea></div>
+<button class="btn" type="submit" style="width:100%">جهّز رسالة التقديم</button>
+<div class="toast" id="result" role="status">اتجهزت رسالتك. انسخها، وبعدها ادخل مجموعة الاختبار على واتساب.</div>
+<div id="copyArea" style="display:none;margin-top:12px"><textarea id="message" rows="5" readonly></textarea><button type="button" class="btn outline" id="copyBtn" style="width:100%;margin-top:9px">نسخ رسالة التقديم</button><a class="btn" style="width:100%;margin-top:9px" href="https://chat.whatsapp.com/E6zTmDd1moMKyeBPstEeAC?s=cl&p=a&iam=2" target="_blank" rel="noopener">الدخول لاختبار الكلان</a></div>
+<p class="form-note">النموذج لا يرسل بياناتك تلقائياً ولا يجمع رقم هاتفك. أنت تختار بنفسك نسخ الرسالة ومشاركتها.</p>
+</form>
+</div></div></section>
+
+<section id="leaders"><div class="wrap">
+<div class="section-head"><span class="eyebrow">THE FOUNDERS</span><h2>الإدارة والقيادة</h2><p>وراء كل فريق قوي قيادة عندها خبرة وطموح.</p></div>
+<div class="leaders">
+<article class="leader"><div class="avatar">3A</div><h3>3LOASH</h3><span class="role">مؤسس • لاعب بطولات</span><p>من مؤسسي EGY SPICY ولاعب بطولات.</p></article>
+<article class="leader"><div class="avatar">N</div><h3>Nasa</h3><span class="role">مؤسس • لاعب بطولات</span><p>من مؤسسي EGY SPICY ولاعب بطولات.</p></article>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><b>EGY SPICY 🌶️</b><br>جميع الحقوق محفوظة © 2026 — مجتمع Free Fire</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// Supabase project settings
+const SUPABASE_URL = "https://einrkaqozklqyxuqqbzc.supabase.co";
+// Paste the anon / publishable key from Supabase API Keys. NEVER use service_role here.
+const SUPABASE_ANON_KEY = "sb_publishable_vE14A1t3j1Gw0eEPh6kpxg_FWyp76jG";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const form=document.getElementById('applyForm');
+form.addEventListener('submit', async function(e){
+ e.preventDefault();
+ const player=document.getElementById('player').value.trim();
+ if(!player)return;
+ const style=document.getElementById('style').value;
+ const experience=document.getElementById('experience').value.trim();
+ const submitButton = form.querySelector('button[type="submit"]');
+ const result = document.getElementById('result');
+ const copyArea = document.getElementById('copyArea');
+
+ if (SUPABASE_ANON_KEY.includes("PASTE_YOUR_")) {
+   result.style.display='block';
+   result.textContent='لازم نضيف مفتاح Supabase العام للموقع قبل حفظ الطلبات. اتبع خطوات إعداد المفتاح.';
+   result.style.background='#4a3514';
+   result.style.color='#ffe0a3';
+   return;
+ }
+
+ submitButton.disabled = true;
+ submitButton.textContent = 'جارٍ حفظ طلبك...';
+ result.style.display='none';
+ copyArea.style.display='none';
+
+ const { data, error } = await supabaseClient
+   .from('clan_applications')
+   .insert([{ player_name: player, play_style: style, experience: experience || null }])
+;
+
+ if (error) {
+   console.error('Supabase insert error:', error);
+   result.style.display='block';
+   result.textContent='محصلش حفظ للطلب. راجع إعدادات قاعدة البيانات وحاول تاني.';
+   result.style.background='#451b20';
+   result.style.color='#ffc2c6';
+   submitButton.disabled = false;
+   submitButton.textContent = 'حاول إرسال الطلب مرة أخرى';
+   return;
+ }
+
+ const msg=`طلب انضمام إلى EGY SPICY 🌶️\nاسم اللاعب: ${player}\nأسلوب اللعب: ${style}\nمعلومات إضافية: ${experience || 'لا يوجد'}\nرقم الطلب: تم التسجيل\nأتمنى تحديد موعد الاختبار.`;
+ document.getElementById('message').value=msg;
+ copyArea.style.display='block';
+ result.style.display='block';
+ result.textContent='تم حفظ طلبك بنجاح في قاعدة بيانات EGY SPICY. انسخ رسالة التقديم وادخل مجموعة الاختبار على واتساب.';
+ result.style.background='#16331f';
+ result.style.color='#b9f3c8';
+ submitButton.textContent='تم تسجيل الطلب ✓';
+});
+document.getElementById('copyBtn').addEventListener('click',async function(){
+ const box=document.getElementById('message');
+ try{await navigator.clipboard.writeText(box.value);this.textContent='تم نسخ الرسالة ✓';}
+ catch(e){box.select();document.execCommand('copy');this.textContent='تم نسخ الرسالة ✓';}
+});
+</script>
+</body>
+</html>
