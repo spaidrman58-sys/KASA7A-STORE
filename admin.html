@@ -1,48 +1,26 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071923">
-<title>KASA7A STORE - لوحة التحكم</title>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071923"><title>KASA7A STORE - الإدارة</title>
 <style>
-:root{--bg:#071923;--panel:#102a36;--panel2:#0c222d;--line:#245061;--cyan:#32d5c8;--gold:#ffbf69;--txt:#f2fbff;--muted:#a8c0c9;--danger:#ff8b8b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,Tahoma,Arial}main{max-width:980px;margin:auto;padding:18px}.top{border-bottom:1px solid var(--line);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;background:var(--panel)}.brand{font-weight:1000;font-size:22px}.brand span{color:var(--cyan)}.card{background:linear-gradient(145deg,#102a36,#0b202a);border:1px solid var(--line);border-radius:20px;padding:18px;margin:18px 0;box-shadow:0 12px 30px #0003}label{display:block;margin:13px 0 7px;color:#d6e8ed;font-size:13px}input,select{width:100%;padding:13px;border-radius:12px;background:#071923;color:var(--txt);border:1px solid #315563;font:inherit;outline:none;margin-bottom:10px}input:focus,select:focus{border-color:var(--cyan)}.primary{width:100%;border:0;border-radius:13px;padding:15px;background:linear-gradient(90deg,#14a99f,#32d5c8);color:#03232a;font-weight:900;cursor:pointer}.secondary{border:1px solid var(--line);background:#0b202a;color:var(--txt);border-radius:11px;padding:10px 14px;cursor:pointer;margin-left:5px}.order{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);margin-bottom:15px;line-height:1.8}.muted{color:var(--muted);font-size:13px}.admin{display:none}.receipt-img{max-width:100%;max-height:300px;border-radius:8px;margin-top:10px;border:1px solid var(--line);display:block;cursor:pointer}
+:root{--bg:#071923;--panel:#102a36;--line:#245061;--cyan:#32d5c8;--gold:#ffbf69;--txt:#f2fbff;--muted:#a8c0c9;--danger:#ff8b8b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,Tahoma,Arial}.top{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 18px}.brand{font-size:22px;font-weight:1000}.brand span{color:var(--cyan)}main{max-width:1000px;margin:auto;padding:18px}.card,.order{background:linear-gradient(145deg,#102a36,#0b202a);border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}.row{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}label{display:block;margin:12px 0 7px;color:#d6e8ed;font-size:13px}input,select{width:100%;padding:13px;border-radius:12px;background:#071923;color:var(--txt);border:1px solid #315563;font:inherit;margin-bottom:8px}.primary,.secondary{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer}.primary{width:100%;background:linear-gradient(90deg,#14a99f,#32d5c8);color:#03232a}.secondary{background:#0b202a;color:var(--txt);border:1px solid var(--line)}.danger{background:var(--danger);color:#210909}.muted{color:var(--muted);font-size:13px;line-height:1.7}.receipt{max-width:100%;max-height:360px;display:block;border-radius:12px;border:1px solid var(--line);margin-top:10px}.hidden{display:none}.error{color:#ffb3b3}.statusrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.statusrow select{max-width:220px}
 </style></head>
-<body>
-<nav class="top"><div class="brand">KASA7A <span>ADMIN</span></div></nav>
-<main>
-<section class="card" id="loginbox"><h2>تسجيل دخول الإدارة</h2><label>البريد الإلكتروني للإدارة</label><input id="email" type="email"><label>كلمة مرور دخول الإدارة</label><input id="password" type="password"><button id="login" class="primary">دخول لوحة الإدارة</button></section>
-<section id="admin" class="admin"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}"><h2>لوحة التحكم بالطلبات</h2><div><button id="refresh" class="secondary">تحديث الطلبات</button><button id="logout" class="secondary" style="background:var(--danger);color:#000">تسجيل الخروج</button></div></div><div id="orders"></div></section>
+<body><nav class="top"><div class="brand">KASA7A <span>ADMIN</span></div></nav><main>
+<section class="card" id="loginBox"><h2>تسجيل دخول الإدارة</h2><label for="email">البريد الإلكتروني</label><input id="email" type="email" autocomplete="username"><label for="password">كلمة المرور</label><input id="password" type="password" autocomplete="current-password"><button class="primary" id="login">دخول</button><p id="loginMsg" class="muted"></p></section>
+<section id="dashboard" class="hidden"><div class="row"><h2>طلبات المتجر</h2><div><button class="secondary" id="refresh">تحديث</button> <button class="secondary danger" id="logout">تسجيل الخروج</button></div></div><p id="msg" class="muted"></p><div id="orders"></div></section>
 </main>
-<script src="https://jsdelivr.net"></script><script>
-const db=supabase.createClient("https://supabase.co","sb_publishable_M4tn0c80Y6Ho0f8Y0Tsd2g_IxuvCyfp");
-const $=id=>document.getElementById(id);
-
-async function checkUser(){let session=await db.auth.getSession();if(session.data.session){$("loginbox").style.display="none";$("admin").style.display="block";load()}else{$("loginbox").style.display="block";$("admin").style.display="none"}}window.onload=checkUser;
-
-$("login").onclick=async()=>{
-let r=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});
-if(r.error)return alert("بيانات الدخول خاطئة: "+r.error.message);$("loginbox").style.display="none";$("admin").style.display="block";load()};
-
-async function load(){let box=$("orders");box.textContent="تحميل الطلبات الجارية وضمان أمان الإيصالات...";
-let r=await db.from("orders").select("*").order("created_at",{ascending:false}).limit(100);
-if(r.error){box.textContent=r.error.message;return}box.innerHTML="";
-
-for(let o of r.data){let d=document.createElement("div");d.className="order";
-let t=document.createElement("b");t.style.fontSize="16px";t.style.color="var(--gold)";t.textContent=`رقم الطلب: ${o.order_number} | اللعبة: ${o.game} | الباقة: ${o.package_name} | السعر: ${o.amount} ج`;
-let p=document.createElement("p");p.className="muted";p.textContent=`طريقة الشحن: ${o.delivery_method} | الـ ID أو اليوزر: ${o.player_id} | وسيلة الدفع: ${o.payment_method}`;
-
-let statusWrapper=document.createElement("div");statusWrapper.style.margin="10px 0";
-let s=document.createElement("select");s.style.width="auto";s.style.display="inline-block";s.style.marginLeft="10px";
-[["pending","قيد المراجعة"],["reviewing","جارٍ التنفيذ"],["completed","مكتمل"],["rejected","مرفوض"]].forEach(([v,n])=>{let op=document.createElement("option");op.value=v;op.textContent=n;op.selected=o.status===v;s.append(op)});
-
-let b=document.createElement("button");b.className="secondary";b.textContent="تحديث الحالة";
-b.onclick=async()=>{b.disabled=true;let x=await db.from("orders").update({status:s.value}).eq("id",o.id);b.disabled=false;alert(x.error?x.error.message:"تم تحديث حالة الطلب بنجاح!")};statusWrapper.append(s,b);d.append(t,p,statusWrapper);
-
-if(o.payment_reference){let imgLabel=document.createElement("div");imgLabel.textContent="صورة إيصال التحويل:";imgLabel.className="muted";d.append(imgLabel);
-let img=document.createElement("img");img.className="receipt-img";img.alt="جاري تحميل الإيصال بأمان...";
-let{data:imgData,error:imgErr}=await db.storage.from("receipts").createSignedUrl(o.payment_reference,600);
-if(!imgErr&&imgData){img.src=imgData.signedUrl;img.onclick=()=>window.open(imgData.signedUrl,"_blank")}else{img.alt="لا يمكن جلب الإيصال أو الباكت غير موجود"}d.append(img)}box.append(d)}
-if(r.data.length===0){box.textContent="لا توجد طلبات في قاعدة البيانات حالياً."}}
-
-$("refresh").onclick=load;
-$("logout").onclick=async()=>{await db.auth.signOut();$("loginbox").style.display="block";$("admin").style.display="none";$("email").value="";$("password").value=""};
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+const db=window.supabase.createClient("https://lndmmdvibyqliymstyrh.supabase.co","sb_publishable_M4tn0c80Y6Ho0f8Y0Tsd2g_IxuvCyfp"),BUCKET="receipts", $=id=>document.getElementById(id);
+function msg(id,t,err=false){$(id).textContent=t;$(id).className=err?"muted error":"muted"}
+function loginView(){ $("loginBox").classList.remove("hidden");$("dashboard").classList.add("hidden") }
+function adminView(){ $("loginBox").classList.add("hidden");$("dashboard").classList.remove("hidden");load() }
+async function verifyAndShow(){const {data:{session}}=await db.auth.getSession();if(!session){loginView();return}const {data,error}=await db.from("orders").select("id").limit(1);if(error){await db.auth.signOut();loginView();msg("loginMsg","الحساب دخل لكن لا يملك صلاحية قراءة الطلبات: "+error.message,true);return}adminView()}
+$("login").onclick=async()=>{msg("loginMsg","جارٍ تسجيل الدخول...");const {error}=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});if(error){msg("loginMsg","تعذر تسجيل الدخول: "+error.message,true);return}await verifyAndShow()};
+async function load(){msg("msg","جارٍ تحميل الطلبات...");$("orders").replaceChildren();const {data,error}=await db.from("orders").select("*").order("created_at",{ascending:false}).limit(100);if(error){msg("msg","تعذر تحميل الطلبات: "+error.message,true);return}if(!data.length){msg("msg","لا توجد طلبات حاليًا.");return}msg("msg",`عدد الطلبات: ${data.length}`);
+for(const o of data){const card=document.createElement("article");card.className="order";const h=document.createElement("h3");h.textContent=`${o.order_number} | ${o.game} | ${o.package_name} | ${o.amount} جنيه`;card.append(h);
+const p=document.createElement("p");p.className="muted";p.textContent=[`طريقة الشحن: ${o.delivery_method||"—"}`,`ID: ${o.player_id||"—"}`,`اسم الحساب: ${o.account_username||"—"}`,`الهاتف: ${o.customer_phone||"—"}`,`الدفع: ${o.payment_method||"—"}`,`التاريخ: ${o.created_at?new Date(o.created_at).toLocaleString("ar-EG"):"—"}`].join(" | ");card.append(p);
+const row=document.createElement("div");row.className="statusrow";const sel=document.createElement("select");[["pending","قيد المراجعة"],["reviewing","جارٍ التنفيذ"],["completed","مكتمل"],["rejected","مرفوض"]].forEach(([v,n])=>{const op=document.createElement("option");op.value=v;op.textContent=n;op.selected=(o.status||"pending")===v;sel.append(op)});
+const save=document.createElement("button");save.className="secondary";save.textContent="حفظ الحالة";save.onclick=async()=>{save.disabled=true;const {error}=await db.from("orders").update({status:sel.value}).eq("id",o.id);save.disabled=false;if(error)alert("تعذر تحديث الحالة: "+error.message);else alert("تم تحديث الحالة")};row.append(sel,save);card.append(row);
+if(o.payment_reference){const lab=document.createElement("p");lab.className="muted";lab.textContent="إيصال التحويل";card.append(lab);const {data:sd,error:se}=await db.storage.from(BUCKET).createSignedUrl(o.payment_reference,300);if(!se&&sd?.signedUrl){const img=document.createElement("img");img.className="receipt";img.alt="إيصال التحويل";img.src=sd.signedUrl;card.append(img)}else{const e=document.createElement("p");e.className="muted error";e.textContent="تعذر عرض الإيصال: "+se.message;card.append(e)}}$("orders").append(card)}}
+$("refresh").onclick=load;$("logout").onclick=async()=>{await db.auth.signOut();$("email").value="";$("password").value="";loginView()};window.addEventListener("load",verifyAndShow);
 </script></body></html>
