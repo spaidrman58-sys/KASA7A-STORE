@@ -1,59 +1,88 @@
 <!doctype html>
-<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071923">
 <title>KASA7A STORE</title>
 <style>
-:root{--bg:#071923;--panel:#102a36;--panel2:#0c222d;--line:#245061;--cyan:#32d5c8;--gold:#ffbf69;--txt:#f2fbff;--muted:#a8c0c9;--danger:#ff8b8b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#16495a 0,transparent 48%),var(--bg);color:var(--txt);font-family:system-ui,Tahoma,Arial}a{color:inherit;text-decoration:none}.top{position:sticky;top:0;z-index:5;background:#071923ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:1000;font-size:22px;letter-spacing:1px}.brand span{color:var(--cyan)}.top a,.support{border:1px solid #397181;border-radius:999px;padding:9px 14px;color:var(--cyan);font-size:13px}main{max-width:980px;margin:auto;padding:18px}.hero{border:1px solid #2b6470;border-radius:24px;padding:32px 20px;text-align:center;background:linear-gradient(135deg,#123744,#0c2631 65%,#17313a);box-shadow:0 18px 55px #0005;margin:18px 0 25px}.hero .eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px}.hero h1{font-size:clamp(28px,6vw,48px);margin:10px 0;background:linear-gradient(90deg,#fff,var(--cyan),var(--gold));color:transparent;background-clip:text}.hero p{color:var(--muted);margin:0}.section-title{display:flex;align-items:center;gap:10px;margin:25px 2px 12px}.section-title:after{content:"";height:1px;background:var(--line);flex:1}.games,.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game,.pack,button{font:inherit;cursor:pointer}.game{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:16px;padding:16px 10px;text-align:right;transition:.2s}.game strong{display:block;font-size:16px}.game small{color:var(--muted);font-size:12px}.game.active,.pack.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 8px 24px #00cbbb20;background:#123b46}.card{background:linear-gradient(145deg,#102a36,#0b202a);border:1px solid var(--line);border-radius:20px;padding:18px;margin:18px 0;box-shadow:0 12px 30px #0003}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;margin:13px 0 7px;color:#d6e8ed;font-size:13px}input,select{width:100%;padding:13px;border-radius:12px;background:#071923;color:var(--txt);border:1px solid #315563;font:inherit;outline:none}input:focus,select:focus{border-color:var(--cyan)}.pack{text-align:center;background:#0a202a;border:1px solid var(--line);color:var(--txt);border-radius:14px;padding:14px 8px}.pack b,.pack span{display:block}.pack span{color:var(--gold);font-size:13px;margin-top:5px}.primary{width:100%;border:0;border-radius:13px;padding:15px;margin-top:16px;background:linear-gradient(90deg,#14a99f,#32d5c8);color:#03232a;font-weight:900;transition: .2s}.primary:disabled{background:#1d4e52;color:#a8c0c9;cursor:not-allowed}.secondary{border:1px solid var(--line);background:#0b202a;color:var(--txt);border-radius:11px;padding:10px 14px;margin:5px}.hint{background:#0a222c;border:1px solid #28515e;color:#c5dce2;padding:12px;border-radius:12px;font-size:13px;line-height:1.7;margin-top:14px}.status{display:none;padding:16px;margin-top:12px;background:#103c34;color:#c4ffeb;border-radius:12px;line-height:1.6;border:1px solid var(--cyan)}.footer{text-align:center;color:var(--muted);padding:28px 10px;font-size:12px}.file-input-wrapper{position:relative;margin-top:5px}input[type="file"]{padding:10px;background:#0b202a;border:1px dashed var(--line);cursor:pointer}@media(min-width:650px){.games{grid-template-columns:repeat(4,1fr)}.packs{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){.row{grid-template-columns:1fr}.top{padding:12px}.brand{font-size:18px}}
-</style></head>
+:root{--bg:#071923;--panel:#102a36;--panel2:#0c222d;--line:#245061;--cyan:#32d5c8;--gold:#ffbf69;--txt:#f2fbff;--muted:#a8c0c9;--danger:#ff8b8b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#16495a 0,transparent 48%),var(--bg);color:var(--txt);font-family:system-ui,Tahoma,Arial}a{color:inherit;text-decoration:none}
+.top{position:sticky;top:0;z-index:5;background:#071923ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:1000;font-size:22px;letter-spacing:1px}.brand span{color:var(--cyan)}.top a,.support{border:1px solid #397181;border-radius:999px;padding:9px 14px;color:var(--cyan);font-size:13px}
+main{max-width:980px;margin:auto;padding:18px}.hero{border:1px solid #2b6470;border-radius:24px;padding:32px 20px;text-align:center;background:linear-gradient(135deg,#123744,#0c2631 65%,#17313a);box-shadow:0 18px 55px #0005;margin:18px 0 25px}
+.hero .eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px}.hero h1{font-size:clamp(28px,6vw,48px);margin:10px 0;background:linear-gradient(90deg,#fff,var(--cyan),var(--gold));color:transparent;background-clip:text}.hero p{color:var(--muted);margin:0}
+.section-title{display:flex;align-items:center;gap:10px;margin:25px 2px 12px}.section-title:after{content:"";height:1px;background:var(--line);flex:1}
+.games,.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game,.pack,button{font:inherit;cursor:pointer}
+.game{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:16px;padding:16px 10px;text-align:right;transition:.2s}.game strong{display:block;font-size:16px}.game small{color:var(--muted);font-size:12px}
+.game.active,.pack.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 8px 24px #00cbbb20;background:#123b46}
+.card{background:linear-gradient(145deg,#102a36,#0b202a);border:1px solid var(--line);border-radius:20px;padding:18px;margin:18px 0;box-shadow:0 12px 30px #0003}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;margin:13px 0 7px;color:#d6e8ed;font-size:13px}
+input,select,textarea{width:100%;padding:13px;border-radius:12px;background:#071923;color:var(--txt);border:1px solid #315563;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--cyan)}
+.pack{text-align:center;background:#0a202a;border:1px solid var(--line);color:var(--txt);border-radius:14px;padding:14px 8px}.pack b,.pack span{display:block}.pack span{color:var(--gold);font-size:13px;margin-top:5px}
+.primary{width:100%;border:0;border-radius:13px;padding:15px;margin-top:16px;background:linear-gradient(90deg,#14a99f,#32d5c8);color:#03232a;font-weight:900}.primary:disabled{background:#1d4e52;color:#a8c0c9;cursor:not-allowed}
+.hint{background:#0a222c;border:1px solid #28515e;color:#c5dce2;padding:12px;border-radius:12px;font-size:13px;line-height:1.7;margin-top:14px}
+.status{display:none;padding:16px;margin-top:12px;background:#103c34;color:#c4ffeb;border-radius:12px;line-height:1.8;border:1px solid var(--cyan)}.status.error{background:#3a2025;color:#ffd6d6;border-color:var(--danger)}
+.footer{text-align:center;color:var(--muted);padding:28px 10px;font-size:12px}.muted{color:var(--muted);font-size:13px;line-height:1.7}.supportbar{text-align:center;margin:24px 0}
+input[type=file]{padding:10px;background:#0b202a;border:1px dashed var(--line);cursor:pointer}
+@media(min-width:650px){.games{grid-template-columns:repeat(4,1fr)}.packs{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){.row{grid-template-columns:1fr}.top{padding:12px}.brand{font-size:18px}}
+</style>
+</head>
 <body>
 <nav class="top"><div class="brand">KASA7A <span>STORE</span></div><a href="#support">خدمة العملاء</a></nav>
 <main>
 <section class="hero"><div class="eyebrow">DIGITAL GAMING STORE</div><h1>كساحة ملك الساحة 🔥</h1><p>شحن ألعاب وخدمات رقمية • تجربة أسهل • طلبك تحت المتابعة</p></section>
 <h2 class="section-title">اختار لعبتك</h2>
 <div class="games">
-<button class="game active" data-game="ff"><strong>🔥 Free Fire</strong><small>جواهر وعروض</small></button>
-<button class="game" data-game="pubg"><strong>🎮 PUBG Mobile</strong><small>شدات وبرايم</small></button>
-<button class="game" data-game="tiktok"><strong>🪙 TikTok</strong><small>عملات</small></button>
-<button class="game" data-game="roblox"><strong>🧱 Roblox</strong><small>Robux</small></button>
+<button type="button" class="game active" data-game="ff"><strong>🔥 Free Fire</strong><small>جواهر وعروض</small></button>
+<button type="button" class="game" data-game="pubg"><strong>🎮 PUBG Mobile</strong><small>شدات وبرايم</small></button>
+<button type="button" class="game" data-game="tiktok"><strong>🪙 TikTok</strong><small>عملات</small></button>
+<button type="button" class="game" data-game="roblox"><strong>🧱 Roblox</strong><small>Robux</small></button>
 </div>
 <section class="card" id="order"><h2>إنشاء طلب جديد</h2>
-<div class="row">
-<div><label>الخدمة</label><select id="game"><option value="ff">Free Fire</option><option value="pubg">PUBG Mobile</option><option value="tiktok">TikTok</option><option value="roblox">Roblox</option></select></div>
-<div><label>طريقة الشحن</label><select id="method"></select></div>
-</div>
+<div class="row"><div><label for="game">الخدمة</label><select id="game"><option value="ff">Free Fire</option><option value="pubg">PUBG Mobile</option><option value="tiktok">TikTok</option><option value="roblox">Roblox</option></select></div>
+<div><label for="method">طريقة الشحن</label><select id="method"></select></div></div>
 <label>اختار الباقة</label><div id="packs" class="packs"></div>
-<label id="targetLabel">Player ID</label><input id="target" placeholder="اكتب ID أو اسم المستخدم" maxlength="100">
-<div class="row">
-<div><label>طريقة الدفع</label><select id="payment"><option>Vodafone Cash</option><option>InstaPay</option></select></div>
-<div><label>ملاحظات للطلب (اختياري)</label><input id="notes" maxlength="250" placeholder="أي تفاصيل إضافية"></div>
-</div>
-<div><label style="color:var(--gold)">إرفاق صورة إيصال التحويل (مطلوب)</label><div class="file-input-wrapper"><input id="receiptFile" type="file" accept="image/*"></div></div>
-<div class="hint">اكتب الـ ID أو اسم المستخدم فقط. لا تشارك كلمة مرور اللعبة أو بيانات تسجيل الدخول مع أي شخص. لو الخدمة تحتاج دخولًا للحساب، استخدم طريقة رسمية تحافظ على سرية بياناتك.</div>
-<button id="send" class="primary">إرسال الطلب</button>
-<div id="status" class="status"></div>
+<label id="targetLabel" for="target">Player ID</label><input id="target" placeholder="اكتب ID أو اسم المستخدم" maxlength="100">
+<div class="row"><div><label for="phone">رقم هاتف للتواصل</label><input id="phone" type="tel" maxlength="20" placeholder="رقمك للتواصل معك بخصوص الطلب"></div>
+<div><label for="payment">طريقة الدفع</label><select id="payment"><option>Vodafone Cash</option><option>InstaPay</option></select></div></div>
+<label for="notes">ملاحظات للطلب (اختياري)</label><textarea id="notes" maxlength="250" rows="3" placeholder="أي تفاصيل إضافية (لن تُحفظ في الطلب حاليًا)"></textarea>
+<label style="color:var(--gold)" for="receiptFile">إرفاق صورة إيصال التحويل (مطلوب)</label><input id="receiptFile" type="file" accept="image/jpeg,image/png,image/webp">
+<p class="muted">الحد الأقصى 5 ميجابايت. الصيغ المدعومة JPG وPNG وWebP.</p>
+<div class="hint">اكتب الـ ID أو اسم المستخدم فقط. لا تشارك كلمة مرور اللعبة أو بيانات تسجيل الدخول. لا نطلب كلمات مرور الحسابات.</div>
+<button id="send" class="primary" type="button">إرسال الطلب</button><div id="status" class="status" role="status" aria-live="polite"></div>
 <p class="muted">سيتم مراجعة الطلب يدويًا. إرسال الطلب لا يعني تأكيد الدفع أو إتمام الشحن.</p></section>
 <div class="supportbar" id="support"><a class="support" href="https://wa.me/201011084696" target="_blank" rel="noopener">✆ تواصل مع خدمة العملاء على واتساب</a></div>
 </main><footer class="footer">© KASA7A STORE • جميع الحقوق محفوظة</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const db=supabase.createClient("https://lndmmdvibyqliymstyrh.supabase.co","sb_publishable_M4tn0c80Y6Ho0f8Y0Tsd2g_IxuvCyfp");
+const db=window.supabase.createClient("https://lndmmdvibyqliymstyrh.supabase.co","sb_publishable_M4tn0c80Y6Ho0f8Y0Tsd2g_IxuvCyfp");
+const BUCKET="receipts", $=id=>document.getElementById(id);
+let chosen=null,amount=0;
 const data={
 ff:{methods:["ID","الحساب - عبر وسيلة رسمية آمنة"],prices:{"ID":[["110 جوهرة",65],["231 جوهرة",120],["341 جوهرة",170],["460 جوهرة",235],["500 جوهرة",285],["693 جوهرة",340],["814 جوهرة",395],["924 جوهرة",450],["1045 جوهرة",505],["1188 جوهرة",555],["1298 جوهرة",600],["1419 جوهرة",650],["1529 جوهرة",725],["1650 جوهرة",760],["1771 جوهرة",820],["2002 جوهرة",940],["3003 جوهرة",1400],["3999 جوهرة",1850],["5000 جوهرة",2300],["5600 جوهرة",2580],["6028 جوهرة",2690],["7000 جوهرة",3100],["8000 جوهرة",3520],["9031 جوهرة",3980],["10021 جوهرة",4500],["الأسبوعي",125],["الشهري",590],["بويا باس",60]],"الحساب - عبر وسيلة رسمية آمنة":[["310 جوهرة",150],["520 جوهرة",210],["620 جوهرة",270],["1060 جوهرة",370],["2180 جوهرة",740],["3000 جوهرة",1120],["4000 جوهرة",1420],["5600 جوهرة",1750],["11200 جوهرة",3550],["الأسبوعي",85],["الأسبوعي المخفض",40],["Drop 49",50],["Drop 99",95],["Drop 16",35]]}},
 pubg:{methods:["ID","الحساب - عبر وسيلة رسمية آمنة"],prices:{"ID":[["60 شدة",60],["120 شدة",115],["180 شدة",175],["325 شدة",255],["660 شدة",510],["985 شدة",760],["1800 شدة",1250],["2460 شدة",1800],["3850 شدة",2550],["8100 شدة",4700],["برايم عادي",100],["برايم بلس",600],["170 شدة + 900 جي",70],["180 شدة + 9 قطع ماتريال",175],["300 شدة + 79 قطعة كريستال",260],["العرض الكامل (تفاصيله عند التأكيد)",510]],"الحساب - عبر وسيلة رسمية آمنة":[["325 شدة",230],["385 شدة",285],["660 شدة",460],["985 شدة",630],["1800 شدة",1140],["3850 شدة",2150],["8100 شدة",4250]]}},
 tiktok:{methods:["اسم المستخدم"],prices:{"اسم المستخدم":[["100 عملة",90],["150 عملة",135],["200 عملة",150],["300 عملة",215],["350 عملة",240],["500 عملة",340],["700 عملة",450],["1000 عملة",640],["2000 عملة",1250],["5000 عملة",3100],["10000 عملة",6200]]}},
 roblox:{methods:["اسم المستخدم"],prices:{"اسم المستخدم":[["400 Robux",260],["800 Robux",480],["1600 Robux",960],["4000 Robux",2400],["8000 Robux",4800],["16000 Robux",9600],["32000 Robux",19200]]}}
 };
-const $=id=>document.getElementById(id);let chosen=null,amount=0;
-function render(){let g=$("game").value;$("method").innerHTML=data[g].methods.map(x=>`<option>${x}</option>`).join("");$("targetLabel").textContent=(g==="ff"||g==="pubg")?"Player ID":"اسم المستخدم";renderPacks()}
+function render(){let g=$("game").value;$("method").innerHTML=data[g].methods.map(x=>`<option value="${x}">${x}</option>`).join("");$("targetLabel").textContent=(g==="ff"||g==="pubg")?"Player ID":"اسم المستخدم";$("target").placeholder=(g==="ff"||g==="pubg")?"اكتب Player ID":"اكتب اسم المستخدم";renderPacks()}
 function renderPacks(){let list=data[$("game").value].prices[$("method").value]||[];chosen=null;amount=0;$("packs").innerHTML=list.map((x,i)=>`<button type="button" class="pack" data-i="${i}"><b>${x[0]}</b><span>${x[1]} جنيه</span></button>`).join("");document.querySelectorAll(".pack").forEach(b=>b.onclick=()=>{document.querySelectorAll(".pack").forEach(x=>x.classList.remove("active"));b.classList.add("active");chosen=list[+b.dataset.i][0];amount=list[+b.dataset.i][1]})}
-$("game").onchange=render;$("method").onchange=renderPacks;document.querySelectorAll(".game").forEach(b=>b.onclick=()=>{$("game").value=b.dataset.game;document.querySelectorAll(".game").forEach(x=>x.classList.toggle("active",x===b));render();$("order").scrollIntoView({behavior:"smooth"})});render();
-
+$("game").onchange=render;$("method").onchange=renderPacks;
+document.querySelectorAll(".game").forEach(b=>b.onclick=()=>{$("game").value=b.dataset.game;document.querySelectorAll(".game").forEach(x=>x.classList.toggle("active",x===b));render();$("order").scrollIntoView({behavior:"smooth"})});render();
+function showStatus(t,err=false){$("status").textContent=t;$("status").classList.toggle("error",err);$("status").style.display="block"}
+function orderNo(){return "KS"+Date.now().toString().slice(-9)+Math.floor(Math.random()*90+10)}
 $("send").onclick=async()=>{
-let target=$("target").value.trim();if(!chosen)return alert("اختار الباقة الأول");if(!target)return alert("اكتب ID أو اسم المستخدم");
-let fileInput=$("receiptFile");if(fileInput.files.length===0)return alert("من فضلك ارفع صورة إيصال التحويل أولاً");
-let file=fileInput.files[0];let btn=$("send");let statusDiv=$("status");
-
-btn.disabled=true;btn.textContent="جارٍ رفع الإيصال وإرسال الطلب...";statusDiv.style.display="none";
-try{
+ const target=$("target").value.trim(),phone=$("phone").value.trim(),file=$("receiptFile").files[0],btn=$("send");
+ if(!chosen)return alert("اختار الباقة الأول");if(!target)return alert("اكتب ID أو اسم المستخدم");if(!phone)return alert("اكتب رقم هاتف للتواصل");if(!file)return alert("ارفع صورة الإيصال");
+ if(!["image/jpeg","image/png","image/webp"].includes(file.type))return alert("ارفع JPG أو PNG أو WebP فقط");if(file.size>5*1024*1024)return alert("حجم الصورة أكبر من 5 ميجابايت");
+ btn.disabled=true;btn.textContent="جارٍ رفع الإيصال وإرسال الطلب...";$("status").style.display="none";
+ const number=orderNo(),ext=file.type==="image/png"?"png":file.type==="image/webp"?"webp":"jpg",path=`${number}/${Date.now()}.${ext}`;
+ try{
+  const up=await db.storage.from(BUCKET).upload(path,file,{contentType:file.type,upsert:false});if(up.error)throw new Error("فشل رفع الإيصال: "+up.error.message);
+  const payload={order_number:number,game:$("game").value,package_name:chosen,delivery_method:$("method").value,player_id:target,account_username:null,customer_phone:phone,payment_method:$("payment").value,payment_reference:path,amount:amount,status:"pending"};
+  const res=await db.from("orders").insert(payload).select("order_number").single();
+  if(res.error){await db.storage.from(BUCKET).remove([path]);throw new Error("تعذر تسجيل الطلب: "+res.error.message)}
+  showStatus(`تم استلام طلبك. رقم الطلب: ${res.data.order_number} — الحالة: قيد المراجعة. احتفظ برقم الطلب.`);
+  $("target").value="";$("phone").value="";$("notes").value="";$("receiptFile").value="";document.querySelectorAll(".pack").forEach(x=>x.classList.remove("active"));chosen=null;amount=0;
+ }catch(e){showStatus(e.message||"حدث خطأ أثناء إرسال الطلب.",true)}
+ finally{btn.disabled=false;btn.textContent="إرسال الطلب"}
+};
+</script></body></html>
